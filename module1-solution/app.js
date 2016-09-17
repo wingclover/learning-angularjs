@@ -1,33 +1,39 @@
-(function(){
-    'use strict';
-    
-    angular.module('LunchCheck', [])
-    .controller('LunchCheckController', LunchCheckController);
-    
-    LunchCheckController.$inject = ['$scope']
-    function LunchCheckController($scope){
+(function () {
+'use strict';
+
+angular.module('LunchCheck', [])
+
+.controller('LunchCheckController', LunchCheckController);
+
+LunchCheckController.$inject = ['$scope'];
+
+function LunchCheckController ($scope) {
+    $scope.lunch_message = "";
+    $scope.items = "";
+    $scope.border_style = "";
+
+    $scope.displayMessage = function(){
         var items = $scope.items.split(",");
         var count = 0;
-        for (i=0, i<items.lenth, i++){
-            if (items[i]){
-                count +=1
+        var i;
+        for (i=0; i<items.length; i++){
+            if (items[i].trim()){
+                count +=1;
             }
         };
         
-        $scope.displayMessage = function(){
-        
-            $scope.color-theme = "green";
-        
-            if (count == 0){
-                $scope.lunch-message = "Please enter data first";
-                $scope.color-theme = "red"
-            } else if (count <= 3) {
-                $scope.lunch-message = "Enjoy!"
-            } else {
-                $scope.lunch-message = "Too much!"
-            }
-            
-            return $scope.lunch-message;
+        $scope.color_theme = "green";
+        $scope.border_style = "border-style:solid";
+
+        if (count == 0){
+            $scope.lunch_message = "Please enter data first";
+            $scope.color_theme = "red"
+        } else if (count <= 3) {
+            $scope.lunch_message = "Enjoy!"
+        } else {
+            $scope.lunch_message = "Too much!"
         };
-    }
+        
+    };
+};
 })();
