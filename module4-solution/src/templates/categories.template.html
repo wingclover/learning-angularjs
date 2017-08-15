@@ -1,6 +1,14 @@
-<ul>
-  <li ng-repeat="category in $ctrl.categories"
-      ui-sref="items({shortName: category.short_name})">
-  	<button>{{ category.name }}</button>   
-  </li>
-</ul>
+<div class="row"> 
+	<div class="col-md-4">
+		<ul class="list-group">
+		  <li role="presentation" ng-repeat="category in $ctrl.categories" class="list-group-item"
+		      ui-sref=".items({shortName: category.short_name})" ui-sref-active="active">
+		  	{{ category.name }}  
+		  </li>
+		</ul>	
+	</div>
+	<div class="col-md-8">
+		<ui-view></ui-view>
+	</div>
+</div>
+

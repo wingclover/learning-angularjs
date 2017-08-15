@@ -1,0 +1,28 @@
+<h2>Your Info</h2>
+<p ng-if="nfoCtrl.user===0"></p>
+<table ng-if="infoCtrl.user">
+  <tr>
+    <td>First Name: </td>
+    <td>{{infoCtrl.firstName}}</td>
+  </tr>
+  <tr>
+    <td>Last Name: </td>
+    <td>{{infoCtrl.lastName}}</td>
+  </tr>
+  <tr>
+    <td>Email: </td>
+    <td>{{infoCtrl.email}}</td>
+  </tr>
+  <tr>
+    <td>Phone Number: </td>
+    <td>{{infoCtrl.phoneNumber}}</td>
+  </tr>
+  <tr>
+    <td>Favorite Menu Item: </td>
+    <td>
+      <p>{{infoCtrl.favorite.title}}</p>
+      <p>{{infoCtrl.favorite.description}}</p>
+      <img src="" alt="infoCtrl.favorite.title">
+    </td>
+  </tr>
+</table>
