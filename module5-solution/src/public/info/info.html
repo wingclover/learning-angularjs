@@ -1,28 +1,33 @@
-<h2>Your Info</h2>
-<p ng-if="nfoCtrl.user===0"></p>
-<table ng-if="infoCtrl.user">
-  <tr>
-    <td>First Name: </td>
-    <td>{{infoCtrl.firstName}}</td>
-  </tr>
-  <tr>
-    <td>Last Name: </td>
-    <td>{{infoCtrl.lastName}}</td>
-  </tr>
-  <tr>
-    <td>Email: </td>
-    <td>{{infoCtrl.email}}</td>
-  </tr>
-  <tr>
-    <td>Phone Number: </td>
-    <td>{{infoCtrl.phoneNumber}}</td>
-  </tr>
-  <tr>
-    <td>Favorite Menu Item: </td>
-    <td>
-      <p>{{infoCtrl.favorite.title}}</p>
-      <p>{{infoCtrl.favorite.description}}</p>
-      <img src="" alt="infoCtrl.favorite.title">
-    </td>
-  </tr>
-</table>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3" id="my-info">
+    <h2 class="text-center">My Info</h2>
+    <p ng-if="infoCtrl.user.firstName==undefined">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+    <table ng-if="infoCtrl.user.firstName">
+      <tr>
+        <td>First Name: </td>
+        <td>{{infoCtrl.user.firstName}}</td>
+      </tr>
+      <tr>
+        <td>Last Name: </td>
+        <td>{{infoCtrl.user.lastName}}</td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td>{{infoCtrl.user.email}}</td>
+      </tr>
+      <tr>
+        <td>Phone Number: </td>
+        <td>{{infoCtrl.user.phoneNumber}}</td>
+      </tr>
+      <tr ng-if="infoCtrl.user.favorite">
+        <td>Favorite Menu Item: </td>
+        <td>
+          <p>{{infoCtrl.user.item_title}}({{infoCtrl.user.item_short_name}})</p>
+          <p>{{infoCtrl.user.item_description}}</p>
+          <img ng-src="{{infoCtrl.user.item_url}}" alt="{{infoCtrl.favorite.title}}">
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>

@@ -1,31 +1,37 @@
-<h2>Sign up to get our newsletter:</h2>
-<form name="signupForm" novalidate>
-  <div class="form-group">
-      <input name="first-name" type="text" ng-model="suCtrl.firstName"
-      placeholder="First Name" required
-      class="form-control">
-  </div>
-  <div class="form-group">
-      <input name="last-name" type="text" ng-model="suCtrl.lastName"
-      placeholder="Last Name" required
-      class="form-control">
-  </div>
-  <div class="form-group">
-      <input name="email" type="email" ng-model="suCtrl.email"
-      placeholder="Email Address" required
-      class="form-control">
-  </div>
-  <div class="form-group">
-      <input name="phone-number" type="tel" ng-model="suCtrl.phoneNumber"
-      placeholder="###-###-####" required pattern="(\d{3})-(\d{3})-(\d{4})"
-      class="form-control">
-  </div>
-  <div class="form-group">
-    <input name="favorite" type="text" ng-model="fsuCtrl.avorite"
-    placeholder="The menu number of your favorite dish." class="form-control">
-  </div>
-  <div class="form-group">
-      <button type="button" name="submit" ng-click="signup();" ng-disabled="signupForm.$invalid">Submit</button>
+<div class="container">
+  <h2 class="text-center">Sign up to get our newsletter:</h2>
+  <div class="col-md-4 col-md-offset-4">
+    <form name="signupForm" novalidate>
+      <div class="form-group">
+          <input name="first-name" type="text" ng-model="suCtrl.firstName"
+          placeholder="First Name" required
+          class="form-control">
+      </div>
+      <div class="form-group">
+          <input name="last-name" type="text" ng-model="suCtrl.lastName"
+          placeholder="Last Name" required
+          class="form-control">
+      </div>
+      <div class="form-group">
+          <input name="email" type="email" ng-model="suCtrl.email"
+          placeholder="Email Address" required
+          class="form-control">
+      </div>
+      <div class="form-group">
+          <input name="phone-number" type="tel" ng-model="suCtrl.phoneNumber"
+          placeholder="###-###-####" required pattern="(\d{3})-(\d{3})-(\d{4})"
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <input name="favorite" type="text" ng-model="suCtrl.favorite"
+        placeholder="The menu number of your favorite dish." class="form-control">
+        <span ng-show="signupForm.favorite.$touched && suCtrl.favValid===false">No such menu number exists.</span>
+      </div>
+      <div class="form-group">
+          <button type="button" name="submit" ng-click="suCtrl.signup();" ng-disabled="signupForm.$invalid">Submit</button>
+      </div>
+      <span ng-show="suCtrl.submitted">Your information has been saved.</span>
+    </form>
   </div>
 
-</form>
+</div>

@@ -113,6 +113,17 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* MY INFO PAGE */
+#my-info p{
+  text-align: center;
+  padding: 30px;
+}
+td {
+  padding: 15px;
+}
+
+/* END MY INFO PAGE */
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

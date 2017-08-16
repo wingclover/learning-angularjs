@@ -4,12 +4,11 @@
 angular.module('public')
 .controller('InfoController', InfoController);
 
-InfoController.$inject = ['SignupService', 'MenuService'];
-function InfoController(SignupService, MenuService) {
+InfoController.$inject = ['SignupService'];
+function InfoController(SignupService) {
   var ctrl = this;
-  var ctrl.user = SignupService.getInfo();
-  var favorite_item = 
-
+  ctrl.user = SignupService.getInfo();
+}
 
 
 })();
