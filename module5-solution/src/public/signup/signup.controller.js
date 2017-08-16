@@ -4,17 +4,33 @@
 angular.module('public')
 .controller('SignupController', SignupController);
 
-SignupController.$inject = ['MenuService', 'SignupService'];
-function SignupController(MenuService, SignupService) {
+SignupController.$inject = ['MenuService', 'SignupService', 'shortNameList'];
+function SignupController(MenuService, SignupService, shortNameList) {
   var ctrl = this;
   ctrl.firstName = "";
   ctrl.lastName = "";
   ctrl.email = "";
   ctrl.phoneNumber = "";
   ctrl.favorite = "";
-  ctrl.favValid = true;
   ctrl.submitted = false;
   ctrl.item = "test";
+  ctrl.shortNameList = shortNameList;
+
+
+  ctrl.favValid = function (){
+    if (ctrl.favorite){
+      if (ctrl.shortNameList.indexOf(ctrl.favorite)!=-1){
+        return true;
+      }
+      else {
+        return false;
+      }
+
+    }
+    else {
+      return false;
+    }
+  }
 
   ctrl.signup = function(){
     if (ctrl.favorite){
@@ -22,11 +38,7 @@ function SignupController(MenuService, SignupService) {
         ctrl.item = result;
         if (ctrl.item){
           SignupService.create(ctrl.firstName, ctrl.lastName, ctrl.email, ctrl.phoneNumber, ctrl.item);
-          ctrl.favValid = true;
           ctrl.submitted = true;
-        }
-        else {
-          ctrl.favValid = false;
         }
 
       });

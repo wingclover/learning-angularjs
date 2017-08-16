@@ -39,8 +39,18 @@ function MenuService($http, ApiPath) {
           return false;
         }
     });
-  }
+  };
 
+  service.getShortNames = function(){
+    return $http.get(ApiPath + '/menu_items.json').then(function (response) {
+      var result = [];
+      var l = response.data.menu_items;
+      for (var i = 0; i < l.length; i++){
+        result.push(l[i]["short_name"])
+      }
+      return result;
+    });
+  };
 }
 
 

@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="col-md-6 col-md-offset-3" id="my-info">
+  <div class="col-md-8 col-md-offset-2" id="my-info">
     <h2 class="text-center">My Info</h2>
-    <p ng-if="infoCtrl.user.firstName==undefined">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
-    <table ng-if="infoCtrl.user.firstName">
+    <p ng-show="infoCtrl.user.firstName==undefined">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+    <table ng-show="infoCtrl.user.firstName">
       <tr>
         <td>First Name: </td>
         <td>{{infoCtrl.user.firstName}}</td>

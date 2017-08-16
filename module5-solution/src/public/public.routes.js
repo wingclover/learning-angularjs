@@ -46,6 +46,11 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/signup/signup.html',
       controller: 'SignupController',
       controllerAs: 'suCtrl',
+      resolve: {
+        shortNameList: ['MenuService', function (MenuService) {
+          return MenuService.getShortNames();
+        }]
+      }
     })
     .state('public.info', {
       url: '/info',

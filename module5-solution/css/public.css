@@ -114,15 +114,31 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 /* MY INFO PAGE */
-#my-info p{
+#my-info>p {
   text-align: center;
   padding: 30px;
 }
+
 td {
   padding: 15px;
+  vertical-align: top;
 }
 
 /* END MY INFO PAGE */
+
+/* SIGN UP PAGE */
+#signup-h2 {
+  padding-bottom: 30px;
+}
+#submit-div {
+  text-align: center;
+}
+
+#submit-div button {
+  color: black;
+}
+/* END SIGN UP PAGE */
+
 
 
 /********** Large devices only **********/
