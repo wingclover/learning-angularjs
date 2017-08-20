@@ -3,20 +3,20 @@
   <div class="col-md-4 col-md-offset-4">
     <form name="signupForm" novalidate>
       <div class="form-group">
-          <label for="first-name">First Name</label>
-          <input name="first-name" type="text" ng-model="suCtrl.firstName"
+          <label for="firstName">First Name</label>
+          <input name="firstName" type="text" ng-model="suCtrl.firstName"
           placeholder="John" required
           class="form-control">
-          <span ng-if="signupForm.first-name.$error.required && signupForm.first-name.$touched">
+          <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
             First Name required
           </span>
       </div>
       <div class="form-group">
-          <label for="last-name">Last Name</label>
-          <input name="last-name" type="text" ng-model="suCtrl.lastName"
+          <label for="lastName">Last Name</label>
+          <input name="lastName" type="text" ng-model="suCtrl.lastName"
           placeholder="Smith" required
           class="form-control">
-          <span ng-if="signupForm.last-name.$error.required && signupForm.last-name.$touched">
+          <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
             Last Name required
           </span>
       </div>
