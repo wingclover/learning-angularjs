@@ -7,7 +7,7 @@
           <input name="first-name" type="text" ng-model="suCtrl.firstName"
           placeholder="John" required
           class="form-control">
-          <span ng-if="suCtrl.firstName.$error.required && suCtrl.firstName.$touched">
+          <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
             First Name required
           </span>
       </div>
@@ -16,7 +16,7 @@
           <input name="last-name" type="text" ng-model="suCtrl.lastName"
           placeholder="Smith" required
           class="form-control">
-          <span ng-if="suCtrl.lastName.$error.required && suCtrl.lastName.$touched">
+          <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
             Last Name required
           </span>
       </div>
@@ -25,7 +25,7 @@
           <input name="email" type="email" ng-model="suCtrl.email"
           placeholder="example@domain.com" required
           class="form-control">
-          <span ng-if="suCtrl.email.$invalid && suCtrl.email.$touched">
+          <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
       </div>
@@ -34,7 +34,7 @@
           <input name="phone-number" type="tel" ng-model="suCtrl.phoneNumber"
           placeholder="###-###-####" required pattern="(\d{3})-(\d{3})-(\d{4})"
           class="form-control">
-          <span ng-if="suCtrl.phoneNumber.$invalid && suCtrl.phoneNumber.$touched">
+          <span ng-if="signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$touched">
             Phone must be in the format ###-###-####.
           </span>
       </div>
