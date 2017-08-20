@@ -7,7 +7,7 @@
           <input name="first-name" type="text" ng-model="suCtrl.firstName"
           placeholder="John" required
           class="form-control">
-          <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
+          <span ng-if="signupForm.first-name.$error.required && signupForm.first-name.$touched">
             First Name required
           </span>
       </div>
@@ -16,7 +16,7 @@
           <input name="last-name" type="text" ng-model="suCtrl.lastName"
           placeholder="Smith" required
           class="form-control">
-          <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
+          <span ng-if="signupForm.last-name.$error.required && signupForm.last-name.$touched">
             Last Name required
           </span>
       </div>
@@ -34,7 +34,7 @@
           <input name="phone-number" type="tel" ng-model="suCtrl.phoneNumber"
           placeholder="###-###-####" required pattern="(\d{3})-(\d{3})-(\d{4})"
           class="form-control">
-          <span ng-if="signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$touched">
+          <span ng-if="signupForm.phone-number.$invalid && signupForm.phone-number.$touched">
             Phone must be in the format ###-###-####.
           </span>
       </div>
